@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>Color Changer</title>
+</head>
+<body>
+    <h1>Click the button to change color!</h1>
+    <button onclick="changeColor()">Change Color</button>
+    <script>
+        function changeColor() {
+            fetch('/change_color')
+                .then(response => response.text())
+                .then(color => {
+                    document.body.style.backgroundColor = color;
+                });
+        }
+    </script>
+</body>
+</html>
